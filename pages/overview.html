@@ -11,43 +11,63 @@
   <nav class="navbar">
     <ul>
       <li><a href="../index.html">Home</a></li>
-      <li><a href="overview.html">Company Overview</a></li>
+      <li><a href="overview.html" class="active">Company Overview</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="whoweare.html">Who We Are?</a></li>
+      <li><a href="whoweare.html">Who We Are</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
 
-  <!-- Full Page Content -->
+  <!-- Card container -->
 <section class="page">
-  <div class="mv-layout">
-    <!-- Mission Box -->
-    <div class="mission-box">
-      <h2>Mission</h2>
-      <p>To empower businesses and communities by providing complete, reliable, and future-ready IT solutions that connect people to the latest technologies.</p>
-    </div>
-
-    <!-- Company Overview (center) -->
-    <div class="card overview-box">
+  <div class="card-container">
+    <!-- Company Overview Card -->
+    <div class="card overview active">
       <h1>Company Overview</h1>
-      <p><strong>PRISM Tech PH (Principe and Ramos Information Systems Management Co.)</strong> 
-      is a full-service provider of the latest information technologies, dedicated to connecting people and organizations to innovation. Founded by Wendell Principe and Greggy Ramos, the company delivers end-to-end IT services — from software and hardware solutions to installation, networking, support, and maintenance — ensuring seamless integration across industries.</p>
-      <p>We specialize in <strong>IT Service Management</strong> that brings together cross-functional technologies, empowering businesses to operate efficiently and securely in a rapidly evolving digital landscape. By combining technical expertise with a client-first approach, PRISM Tech PH positions itself as a trusted partner for organizations seeking reliable, scalable, and future-ready IT solutions.</p>
+      <p><strong>PRISM Tech PH (Principe and Ramos Information Systems Management Co.) is a full-service provider of the latest information technologies, dedicated to connecting people and organizations to innovation. Founded by Wendell Principe and Greggy Ramos, the company delivers end-to-end IT services — from software and hardware solutions to installation, networking, support, and maintenance — ensuring seamless integration across industries..</p>
+      <p>We specialize in IT Service Management that brings together cross-functional technologies, empowering businesses to operate efficiently and securely in a rapidly evolving digital landscape. By combining technical expertise with a client-first approach, PRISM Tech PH positions itself as a trusted partner for organizations seeking reliable, scalable, and future-ready IT solutions.</p>
+      <button class="next-btn">&gt;</button>
     </div>
 
-    <!-- Vision Box -->
-    <div class="vision-box">
-      <h2>Vision</h2>
-      <p>To be a trusted leader in IT service management, recognized for integrating cross-functional technologies and delivering seamless digital transformation.</p>
+    <!-- Mission & Vision Separate Boxes -->
+    <div class="mv-container">
+      <div class="mission-box">
+        <h2>Mission</h2>
+        <p>To empower businesses and communities by providing complete, reliable, and future-ready IT solutions.</p>
+      </div>
+      <div class="vision-box">
+        <h2>Vision</h2>
+        <p>To be a trusted leader in IT service management, recognized for integrating cross-functional technologies.</p>
+      </div>
+      <button class="prev-btn">&lt;</button>
     </div>
   </div>
 </section>
 
 
-  <!-- Footer Note -->
+  <!-- Footer -->
   <footer>
     <p>© 2026 PRISM Tech PH | All Rights Reserved</p>
-    <p class="footnote">Powered by: Principe and Ramos Information Services Management Co.</p>
+    <p class="footnote">Powered by PRISM Tech PH</p>
   </footer>
+
+  <!-- Script for switching cards -->
+<script>
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const overviewCard = document.querySelector('.card.overview');
+  const mvContainer = document.querySelector('.mv-container');
+
+  nextBtn.addEventListener('click', () => {
+    overviewCard.classList.remove('active');
+    mvContainer.classList.add('active');
+  });
+
+  prevBtn.addEventListener('click', () => {
+    mvContainer.classList.remove('active');
+    overviewCard.classList.add('active');
+  });
+</script>
+
 </body>
 </html>
