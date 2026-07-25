@@ -128,9 +128,24 @@ html, body {
     text-align: center;
 }
 
-/* Hover effect only on the Overview card */
 .overview-box:hover {
   transform: scale(1.4);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  border: 2px solid #00c896;
+}
+
+/* One-liner service descriptions */
+.service-box p {
+  white-space: nowrap;       /* force text to stay on one line */
+  overflow: hidden;          /* hide overflow if too long */
+  text-overflow: ellipsis;   /* add "..." if text exceeds width */
+  margin: 5px 0;             /* tighter spacing */
+}
+
+
+/* Hover effect only for service cards */
+.service-box:hover {
+  transform: translateY(-10px);  /* float upward */
   box-shadow: 0 12px 28px rgba(0,0,0,0.3);
   border: 2px solid #00c896;
 }
