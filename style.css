@@ -15,13 +15,16 @@ html, body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
+  background: black); /* semi-transparent */
+  backdrop-filter: blur(10px);          /* blur effect */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
   z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
 .navbar ul {
   display: flex;
+  font-family: 'Courier New', Courier, monospace;
   justify-content: right;
   list-style: none;
   margin: 0;
@@ -46,6 +49,7 @@ html, body {
   color: #00c896;
   border-radius: 6px;
 }
+
 
 /* Page Layout */
 .page {
@@ -72,15 +76,45 @@ html, body {
 
 /* Logo styling */
 .logo {
-  max-width: 150px;
+  max-width: 350px;
   margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px #000000); /* glowing effect */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Hover effect */
 .logo:hover {
-  transform: scale(1.2);          /* zoom in slightly */
+  transform: scale(1.1);          /* zoom in slightly */
   filter: drop-shadow(0 0 10px #000000); /* glowing effect */
+  content: url("image/profilelogo.png");
+}
+
+/* Company Overview Tab */
+.mv-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.mission-box, .vision-box, .overview-box {
+  flex: 1;
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  text-align: center;   /* center justify text */
+}
+
+.overview-box {
+  flex: 2; /* make the overview wider in the center */
+  text-align: left; /* keep overview text left-aligned for readability */
+}
+
+.mission-box h2, .vision-box h2 {
+  margin-top: 0;
+  color: #007acc;
 }
 
 
