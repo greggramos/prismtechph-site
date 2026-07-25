@@ -15,7 +15,7 @@ html, body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: black); /* semi-transparent */
+  background: black; /* fixed semi-transparent */
   backdrop-filter: blur(10px);          /* blur effect */
   -webkit-backdrop-filter: blur(10px);  /* Safari support */
   z-index: 1000;
@@ -50,7 +50,6 @@ html, body {
   border-radius: 6px;
 }
 
-
 /* Page Layout */
 .page {
   height: 100vh;          /* full screen */
@@ -82,41 +81,77 @@ html, body {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Hover effect */
 .logo:hover {
-  transform: scale(1.1);          /* zoom in slightly */
-  filter: drop-shadow(0 0 10px #000000); /* glowing effect */
+  transform: scale(1.1);          
+  filter: drop-shadow(0 0 10px #000000);
   content: url("image/profilelogo.png");
 }
 
 /* Company Overview Tab */
 .mv-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.mission-box, .vision-box, .overview-box {
-  flex: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  text-align: center;   /* center justify text */
+    display: flex;
+    justify-content: center;   /* center the whole row */
+    align-items: flex-start;
+    gap: 100px;                /* spacing between cards */
+    margin-top: 40px;
 }
 
 .overview-box {
-  flex: 2; /* make the overview wider in the center */
-  text-align: center;   /* center justify text */
+    flex: none;
+    width: 600px;              /* fixed width for center card */
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 600px;
+    transition: all 0.3s ease; 
 }
 
-.mission-box h2, .vision-box h2 {
-  margin-top: 0;
-  color: #007acc;
+.mission-box {
+    flex: none;                
+    width: 400px;              
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
+.vision-box {
+    flex: none;
+    width: 400px;              
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Hover effect only on the Overview card */
+.overview-box:hover {
+  transform: scale(1.4);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  border: 2px solid #00c896;
+}
+
+
+/* Contact Us Card */
+.card.contact {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 600px;
+  transition: all 0.3s ease; 
+}
+
+.card.contact:hover {
+  transform: scale(1.4);              /* zoom only hovered card */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  border: 2px solid #00c896;
+}
 
 /* Footer */
 footer {
@@ -139,7 +174,7 @@ footer .footnote {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .mv-layout {
-    flex-direction: column;   /* stack Mission, Overview, Vision */
+    flex-direction: column;   
     align-items: center;
   }
 
@@ -149,7 +184,7 @@ footer .footnote {
   }
 
   .navbar ul {
-    flex-direction: column;   /* stack nav links vertically */
+    flex-direction: column;   
   }
 
   .navbar a {
