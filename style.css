@@ -109,7 +109,7 @@ html, body {
 
 .overview-box {
   flex: 2; /* make the overview wider in the center */
-  text-align: left; /* keep overview text left-aligned for readability */
+  text-align: center;   /* center justify text */
 }
 
 .mission-box h2, .vision-box h2 {
@@ -134,4 +134,26 @@ footer .footnote {
   font-size: 12px;
   color: #ccc;
   margin-top: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .mv-layout {
+    flex-direction: column;   /* stack Mission, Overview, Vision */
+    align-items: center;
+  }
+
+  .mission-box, .vision-box, .overview-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;   /* stack nav links vertically */
+  }
+
+  .navbar a {
+    padding: 10px;
+    text-align: center;
+  }
 }
