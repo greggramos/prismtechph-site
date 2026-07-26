@@ -415,3 +415,74 @@ footer .footnote {
   30% { transform: translateY(-8px); }
   60% { transform: translateY(4px); }
 }
+
+
+/* ===========================
+   Responsive Breakpoints
+   =========================== */
+
+/* Tablet and smaller (≤ 1024px) */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .icon-nav {
+    gap: 15px;
+  }
+
+  .service-grid, .mv-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .icon-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .service-grid, .mv-grid {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+
+  .service-card, .mv-card {
+    margin-bottom: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .icon-nav a {
+    font-size: 24px;
+  }
+}
