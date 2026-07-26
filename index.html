@@ -8,30 +8,88 @@
 </head>
 <body>
   <!-- Navigation -->
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="pages/overview.html">Company Overview</a></li>
-    <li><a href="pages/services.html">Services</a></li>
-    <li><a href="pages/whoweare.html">Who We Are?</a></li>
-    <li><a href="pages/contact.html">Contact Us</a></li>
-  </ul>
-</nav>
-
+  <nav class="navbar">
+    <ul id="nav-tabs" class="hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/overview.html">Company Overview</a></li>
+      <li><a href="pages/services.html">Services</a></li>
+      <li><a href="pages/whoweare.html">Who We Are?</a></li>
+      <li><a href="pages/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
 
   <!-- Full Page Content -->
-  <section class="page home">
-    <div class="card">
-      <img src="image/whitelogo.png" alt="PRISM Tech White Logo" class="logo">
-      <h1>Welcome to PRISM Tech PH</h1>
-      <p>Your trusted partner in IT Solutions.</p>
+<section class="page home">
+  <div class="card">
+    <img src="image/whitelogo.png" alt="PRISM Tech White Logo" class="logo" id="logo">
+    <h1>Welcome to PRISM Tech PH<sup>®</sup></h1>
+    <p>Your trusted partner in IT Solutions.</p>
+
+    <!-- Icon Navigation -->
+    <div class="icon-nav">
+      <a href="index.html" title="Home" class="active">🏠</a>
+      <a href="pages/overview.html" title="Company Overview">📄</a>
+      <a href="pages/services.html" title="Services">🛠️</a>
+      <a href="pages/whoweare.html" title="Who We Are?">👥</a>
+      <a href="pages/contact.html" title="Contact Us">📞</a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer Note -->
   <footer>
     <p>© 2026 PRISM Tech PH | All Rights Reserved</p>
     <p class="footnote">Powered by: Principe and Ramos Information Services Management Co.</p>
+    <p class="footnote">Follow us: 🔗 Facebook | 🔗 LinkedIn | 🔗 Twitter</p>
   </footer>
+
+  <!-- JavaScript Toggle -->
+  <!-- <script>
+  const logo = document.getElementById('logo');
+  const modal = document.getElementById('videoModal');
+  const closeBtn = document.querySelector('.close');
+
+  logo.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script> -->
+
+
+  <!-- <script>
+    const logo = document.getElementById('logo');
+    const navTabs = document.getElementById('nav-tabs');
+
+    logo.addEventListener('click', () => {
+      // Show all tabs with animation
+      navTabs.classList.add('show');
+      navTabs.classList.remove('hidden');
+
+      // Redirect to Contact Us page
+      window.location.href = "pages/contact.html";
+    });
+  </script>  -->
+
+  <!-- Hidden Video Modal -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video controls>
+      <source src="video/company_intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
 </body>
 </html>

@@ -7,29 +7,48 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<nav class="navbar">
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="overview.html">Company Overview</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="whoweare.html">Who We Are?</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
-
-
-  <section class="page">
-    <div class="card contact">
+  <!-- Contact Section -->
+  <section class="page contact">
+    <div class="card">
+      <img src="../image/whitelogo.png" alt="PRISM Tech White Logo" class="logo">
       <h1>Contact Us</h1>
-      <p>Email: info@prismtech.ph</p>
-      <p>Phone: +63 922 948 8222</p>
-      <p>Address: City of Malolos, Bulacan, Philippines 3000</p>
+      <p>We’d love to hear from you! Reach out using the form below or through our contact details.</p>
+
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Company Details -->
+      <div class="contact-info">
+        <p><strong>Address:</strong> City of Malolos, Bulacan, Philippines 3000</p>
+        <p><strong>Phone:</strong> +63 912 345 6789 / +63 962 859 1909</p>
+        <p><strong>Email:</strong> info@prismtech.ph</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="#">📘 Facebook</a>
+        <a href="#">💼 LinkedIn</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+
+      <!-- Tab Icons -->
+      <div class="icon-nav">
+        <a href="../index.html" title="Home">🏠</a>
+        <a href="overview.html" title="Company Overview">📄</a>
+        <a href="services.html" title="Services">🛠️</a>
+        <a href="whoweare.html" title="Who We Are?">👥</a>
+        <a href="contact.html" title="Contact Us" class="active">📞</a>
+      </div>
     </div>
   </section>
-</body>
-</html>
 
-  <!-- Footer Note -->
+  <!-- Footer -->
   <footer>
     <p>© 2026 PRISM Tech PH | All Rights Reserved</p>
     <p class="footnote">Powered by: Principe and Ramos Information Services Management Co.</p>
