@@ -49,14 +49,14 @@ html, body {
 
 /* Hero Section */
 .page.home {
-  height: 100vh;
+  min-height: 100vh;   /* allows content to grow naturally */
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start; /* align from top so navbar doesn’t overlap */
+  padding: 120px 40px 80px; /* clears navbar at top, footer at bottom */
   box-sizing: border-box;
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url("image/background.png") no-repeat center center fixed;
+              url("../image/background.png") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -252,11 +252,11 @@ footer .footnote {
 /* ----------------------------------------------------------------- */
 /* Contact Page Centering */
 .page.contact {
-  height: 100vh;
+  min-height: 100vh;   /* allows content to grow naturally */
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start; /* align from top so navbar doesn’t overlap */
+  padding: 120px 40px 80px; /* clears navbar at top, footer at bottom */
   box-sizing: border-box;
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
               url("../image/background.png") no-repeat center center fixed;
@@ -272,11 +272,11 @@ footer .footnote {
 /* ----------------------------------------------------------------- */
 /* Services Page Centering */
 .page.services {
-  height: 100vh;
+  min-height: 100vh;   /* allows content to grow naturally */
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start; /* align from top so navbar doesn’t overlap */
+  padding: 120px 40px 80px; /* clears navbar at top, footer at bottom */
   box-sizing: border-box;
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
               url("../image/background.png") no-repeat center center fixed;
@@ -333,11 +333,11 @@ footer .footnote {
 /* ----------------------------------------------------------------- */
 /* Company Overview */
 .page.overview {
-  height: 100vh;
+  min-height: 100vh;   /* allows content to grow naturally */
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start; /* align from top so navbar doesn’t overlap */
+  padding: 120px 40px 80px; /* clears navbar at top, footer at bottom */
   box-sizing: border-box;
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
               url("../image/background.png") no-repeat center center fixed;
@@ -356,6 +356,7 @@ footer .footnote {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-top: 30px;
+  align-items: stretch; /* ensures equal height */
 }
 
 .mv-card {
@@ -365,7 +366,11 @@ footer .footnote {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  display: flex;            /* flexbox inside card */
+  flex-direction: column;   /* stack content vertically */
+  justify-content: space-between; /* balance content */
 }
+
 
 .mv-card:hover {
   transform: translateY(-5px);
@@ -461,12 +466,26 @@ footer .footnote {
   .service-card, .mv-card {
     margin-bottom: 15px;
   }
-
-  footer {
-    font-size: 14px;
-    text-align: center;
-  }
 }
+
+/* Footer */
+.page.home footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: none;     /* remove blurred box */
+  color: #fff;          /* keep text visible */
+  text-align: center;
+  padding: 6px 0;       /* slimmer spacing */
+  font-size: 12px;      /* smaller text */
+}
+
+.page.home footer .footnote {
+  font-size: 11px;
+  color: #ccc;
+  margin-top: 2px;
+}
+
 
 /* Small phones (≤ 480px) */
 @media (max-width: 480px) {
