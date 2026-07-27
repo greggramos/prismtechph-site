@@ -442,23 +442,6 @@ footer .footnote {
   }
 }
 
-/* Mobile (≤ 768px) */
-@media (max-width: 768px) {
-  .page {
-    padding: 20px;
-  }
-
-  .card {
-    padding: 15px;
-    text-align: center;
-  }
-
-  .icon-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
   .service-grid, .mv-grid {
     grid-template-columns: 1fr; /* stack vertically */
   }
@@ -486,6 +469,24 @@ footer .footnote {
   margin-top: 2px;
 }
 
+/* ----------------------------------------------------------------- */
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .icon-nav {
+    flex-direction: row;   /* keep them side by side */
+    flex-wrap: wrap;       /* allow wrapping if too many icons */
+    justify-content: center;
+    gap: 12px;
+  }
 
 /* Small phones (≤ 480px) */
 @media (max-width: 480px) {
